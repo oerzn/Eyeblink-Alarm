@@ -35,9 +35,11 @@ while True:
         if len(ratioList)>3:
             ratioList.pop(0)
         ratioAvg = sum(ratioList)/len(ratioList)
+        # if the value of ratioAvg is leass than 37 then it is considered as blink, it will be different for everyother person
         if ratioAvg<37:
             blinkCounter +=1
             color = (0,200,0)
+            #After each multiple of 5 blink ,alarm voice. 
             if blinkCounter%5==0:
                 engine.say("Urgent Help Needed")
                 engine.runAndWait()
